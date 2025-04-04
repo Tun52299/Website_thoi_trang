@@ -13,4 +13,10 @@ class Category extends Model
         'name',
         'icon',
     ];
+
+    // Quan hệ (1-N) với bảng con
+    public function products()
+    {
+        return $this->hasMany(Product::class);
+    }
 }

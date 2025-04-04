@@ -18,4 +18,16 @@ class Product extends Model
         'onpage',
         'category_id',
     ];
+
+    // Quan hệ (N-1) với bảng cha
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
+
+    public function variants()
+    {
+        return $this->hasMany(ProductVariant::class, 'product_id');
+    }
+
 }
