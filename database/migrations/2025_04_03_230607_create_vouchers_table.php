@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('code')->unique();
+            $table->string('type'); // 'percent' or 'fixed'
             $table->decimal('sale_price', 8, 2)->default(0);
             $table->decimal('min_price', 8, 2)->default(0);
             $table->decimal('max_price', 8, 2)->default(0);

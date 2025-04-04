@@ -17,7 +17,6 @@ return new class extends Migration
             $table->foreignId('order_id')->constrained('orders');
             $table->decimal('price', 10, 2)->default(0);
             $table->integer('quantity')->default(1);
-            $table->string('note')->nullable();
             $table->timestamps();
         });
     }

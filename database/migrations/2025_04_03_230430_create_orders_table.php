@@ -20,7 +20,9 @@ return new class extends Migration
             $table->tinyInteger('status')->default(0); // 0: pending, 1: shipped, 2: delivered, 3: canceled
             $table->string('payment'); // cash on delivery
             $table->decimal('total', 10, 2);
-            $table->integer('voucher_id')->nullable(); // voucher code
+            $table->integer('voucher_code')->nullable(); // voucher code
+            $table->decimal('sale_price', 10, 2)->default(0); // discount amount
+            $table->decimal('payment_amount', 10, 2); // amount paid
             $table->timestamps();
         });
     }
